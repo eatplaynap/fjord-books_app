@@ -13,6 +13,8 @@ ja:
   books:
     edit:
       editing_book: 登録内容の編集
+    index:
+      reconfirm: 本当によろしいですか？
 
   button:
     edit: 編集
@@ -21,7 +23,3 @@ ja:
     index: 一覧
     destroy: 削除
     new: 新規作成
-
-  flash:
-    reconfirm: 本当によろしいですか？
-
