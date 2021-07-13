@@ -2,11 +2,6 @@ ja:
   activerecord:
     models:
       book: 本一覧  #g
-
-  books:
-    edit:
-      editing_book: 登録内容の編集
-
     attributes:
       book:
         author: 著者  #g
@@ -14,6 +9,10 @@ ja:
         picture: 画像  #g
         title: 題名  #g
         new_book: 新規登録
+
+  books:
+    edit:
+      editing_book: 登録内容の編集
 
   button:
     edit: 編集
