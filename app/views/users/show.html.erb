@@ -1,2 +1,7 @@
 <% provide(:title, @user.name) %>
 <h1>My page (<%= @user.name %>)</h1>
+<p>Email: <%= @user.email %></p>
+<p>Postal Code: <%= @user.postal_code %></p>
+<p>Address: <%= @user.address %></p>
+<p>Profile: <%= @user.profile %></p>
+<%= link_to "Back", :back %>
