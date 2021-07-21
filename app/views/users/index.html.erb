@@ -8,3 +8,6 @@
     </li>
   <% end %>
 </ul>
+
+<%= paginate @items %>
+<%= link_to t('views.common.back'), books_path %>
