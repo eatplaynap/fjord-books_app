@@ -1,7 +1,7 @@
 <% provide(:title, @user.name) %>
-<h1><%= @user.name %></h1>
-<p>Email: <%= @user.email %></p>
-<p>Postal Code: <%= @user.postal_code %></p>
-<p>Address: <%= @user.address %></p>
-<p>Profile: <%= @user.profile %></p>
+<h1><%= User.human_attribute_name(:name) %>: <%= @user.name %></h1>
+<p><%= User.human_attribute_name(:email) %>: <%= @user.email %></p>
+<p><%= User.human_attribute_name(:postal_code) %>: <%= @user.postal_code %></p>
+<p><%= User.human_attribute_name(:address) %>: <%= @user.address %></p>
+<p><%= User.human_attribute_name(:profile) %>: <%= @user.profile %></p>
 <%= link_to "Back", :back %>
