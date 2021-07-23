@@ -31,4 +31,4 @@
 <br>
 
 <%= link_to t('views.common.new'), new_book_path %>
-<%= link_to 'users', users_path %>
+<%= link_to User.human_attribute_name(:all_users), users_path %>

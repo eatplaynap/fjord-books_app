@@ -29,6 +29,7 @@ ja:
         address: 住所
         name: 名前
         profile: プロフィール
+        all_users: ユーザー一覧
     models:
       user: ユーザー
   devise:
@@ -145,3 +146,9 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+  general:
+    logged_in_as: ログインユーザーは
+    edit_profile: プロフィール編集
+    logout: ログアウト
+    sign_up: 新規ユーザー登録
+    login: ログイン
