@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BooksApp</title>
+    <title><%= yield(:title) %></title>
     <p class="navbar-text pull-right">
       <% if user_signed_in? %>
         <%= t('general.logged_in_as') %> <strong><%= current_user.email %></strong>.
