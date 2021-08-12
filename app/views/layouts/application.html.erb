@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BooksApp</title>
+    <title><%= yield(:title) %></title>
+    <p class="navbar-text pull-right">
+      <% if user_signed_in? %>
+        <%= t('general.logged_in_as') %> <strong><%= current_user.email %></strong>.
+        <%= link_to t('general.edit_profile'), edit_user_registration_path, class: 'navbar-link' %> |
+        <%= link_to t('general.logout'), destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
+      <% else %>
+        <%= link_to t('general.sign_up'), new_user_registration_path, class: 'navbar-link'  %> |
+        <%= link_to t('general.login'), new_user_session_path, class: 'navbar-link'  %>
+      <% end %>
+    </p>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +20,12 @@
   </head>
 
   <body>
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
