@@ -6,13 +6,13 @@
     <strong>
       <%= @user.following.count %>
     </strong>
-    following
+    <%= t("views.common.following") %>
   </a>
   <a href="<%= followers_user_path(@user) %>">
     <strong>
       <%= @user.followers.count %>
     </strong>
-    followers
+    <%= t("views.common.followers") %>
   </a>
 </div>
 
