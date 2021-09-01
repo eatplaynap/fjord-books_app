@@ -1,0 +1,12 @@
+<p>
+  <strong>Comments: </strong>
+  <% commentable.comments.each do |comment| %>
+    <%= comment.body %>
+    <% if comment.user.name.empty? %>
+      <%= comment.user.email %>
+    <% else %>
+      <%= comment.user.name %>
+    <% end %>
+    <%= comment.created_at %>
+  <% end %>
+</p>
