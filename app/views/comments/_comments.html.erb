@@ -1,5 +1,5 @@
 <p>
-  <strong>Comments: </strong>
+  <strong><%= Comment.model_name.human %>: </strong>
   <% commentable.comments.each do |comment| %>
     <%= comment.body %>
     <% if comment.user.name.empty? %>
