@@ -7,6 +7,6 @@
     <% else %>
       <%= comment.user.name %>
     <% end %>
-    <%= comment.created_at %>
+    <%= comment.created_at.to_s(:datetime_jp) %>
   <% end %>
 </p>
