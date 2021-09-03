@@ -55,10 +55,10 @@ class BooksController < ApplicationController
   # DELETE /books/1.json
   def destroy
     @book.destroy
-    # respond_to do |format|
-      redirect_to books_url, notice: t('controllers.common.notice_destroy', name: Book.model_name.human)
-      # format.json { head :no_content }
-    # end
+    respond_to do |format|
+      format.html { redirect_to books_url, notice: t('controllers.common.notice_destroy', name: Book.model_name.human) }
+      format.json { head :no_content }
+    end
   end
 
   private
