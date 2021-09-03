@@ -10,7 +10,7 @@
     <% end %>
     <%= comment.created_at.to_s(:datetime_jp) %>
     <% if current_user == comment.user %>
-      <td><%= link_to t('views.common.destroy'), "/#{comment.commentable.class.name.downcase}s/#{comment.commentable.id}/comments/#{comment.id}", method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
+      <td><%= link_to t('views.common.destroy'), polymorphic_url([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
     <% end %>
   <% end %>
 </p>
