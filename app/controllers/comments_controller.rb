@@ -8,6 +8,12 @@ class CommentsController < ApplicationController
     redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to "/#{@comment.commentable.class.name.downcase}s/#{@comment.commentable.id}", notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
+  end
+
   private
 
   def comment_params
