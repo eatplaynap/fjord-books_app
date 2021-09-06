@@ -17,7 +17,7 @@ ja:
         self_introduction: 自己紹介文
         avatar: ユーザ画像
   users:
-    following:
+    followings:
       title: フォロー一覧
     followers:
       title: フォロワー一覧
