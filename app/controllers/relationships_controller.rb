@@ -8,7 +8,6 @@ class RelationshipsController < ApplicationController
   end
 
   def destroy
-    binding.irb
     user = current_user.active_relationships.find(params[:id]).followed
     current_user.unfollow(user)
     redirect_to user
