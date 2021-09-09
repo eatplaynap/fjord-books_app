@@ -24,6 +24,6 @@ class User < ApplicationRecord
   end
 
   def following?(other_user)
-    followings.where(id: other_user.id).exists?
+    active_relationships.exists?(followed_id: other_user.id)
   end
 end

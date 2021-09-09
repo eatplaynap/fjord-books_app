@@ -17,7 +17,8 @@ class UsersController < ApplicationController
 
   def followers
     @title = t('.followers.title')
-    @users = @user.followers
+    @users = @user.followers.order(:id)
+    binding.irb
     render 'show_follow'
   end
 
