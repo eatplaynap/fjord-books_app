@@ -1,5 +1,20 @@
 <h1><%= t('views.common.title_show', name: User.model_name.human) %></h1>
 
+<div class="stats">
+  <%= link_to t("views.common.followings", count: @user.followings.count), followings_user_path(@user) %>
+  <%= link_to t("views.common.followers", count: @user.followers.count), followers_user_path(@user) %>
+</div>
+
+<% unless current_user == @user %>
+  <div id="follow_form">
+    <% if current_user.following?(@user) %>
+      <%= render 'unfollow', user: @user %>
+    <% else %>
+      <%= render 'follow', user: @user %>
+    <% end %>
+  </div>
+<% end %>
+
 <p>
   <strong><%= User.human_attribute_name(:email) %>:</strong>
   <%= @user.email %>
