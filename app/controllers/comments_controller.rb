@@ -6,12 +6,12 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new comment_params
     @comment.user = current_user
-    @comment.save
+    @comment.save!
     redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
+    @comment = current_user.comments.find_by(id: params[:id])
     @comment.destroy
     redirect_to polymorphic_url([@commentable]), notice: t('controllers.common.notice_destroy', name: Comment.model_name.human)
   end
