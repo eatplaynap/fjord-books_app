@@ -8,7 +8,7 @@
     <% else %>
       <%= comment.user.name %>
     <% end %>
-    <%= comment.created_at.to_s(:datetime_jp) %>
+    <%= l comment.created_at, format: :long %>
     <% if current_user == comment.user %>
       <td><%= link_to t('views.common.destroy'), polymorphic_url([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
     <% end %>
