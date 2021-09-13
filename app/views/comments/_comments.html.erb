@@ -1,0 +1,16 @@
+<p>
+  <strong><%= Comment.model_name.human %>: </strong>
+  <% commentable.comments.each do |comment| %>
+    <br>
+    <%= comment.body %>
+    <% if comment.user.name.empty? %>
+      <%= comment.user.email %>
+    <% else %>
+      <%= comment.user.name %>
+    <% end %>
+    <%= l comment.created_at, format: :long %>
+    <% if current_user == comment.user %>
+      <td><%= link_to t('views.common.destroy'), polymorphic_url([commentable, comment]), method: :delete, data: { confirm: t('views.common.delete_confirm') } %></td>
+    <% end %>
+  <% end %>
+</p>
