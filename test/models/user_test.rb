@@ -20,9 +20,27 @@ class UserTest < ActiveSupport::TestCase
     assert me.following?(she)
   end
 
-  # test 'unfollow' do
-  #   me = User.create!(email: 'me@example.com', password: 'password')
-  #   she = User.create!(email: 'she@example.com', password: 'password')
-  #
-  # end
+  test '#unfollow' do
+    me = User.create!(email: 'me@example.com', password: 'password')
+    she = User.create!(email: 'she@example.com', password: 'password')
+
+    me.follow(she)
+    assert me.following?(she)
+    me.unfollow(she)
+    assert_not me.following?(she)
+  end
+
+  test '#following?' do
+    me = User.create!(email: 'me@example.com', password: 'password')
+    she = User.create!(email: 'she@example.com', password: 'password')
+    me.follow(she)
+    assert me.following?(she)
+  end
+
+  test '#followed_by?' do
+    me = User.create!(email: 'me@example.com', password: 'password')
+    she = User.create!(email: 'she@example.com', password: 'password')
+    me.follow(she)
+    assert she.followed_by?(me)
+  end
 end
