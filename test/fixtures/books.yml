@@ -3,7 +3,7 @@
 one:
   title: MyString
   memo: MyText
-
-two:
-  title: MyString
-  memo: MyText
+#
+#two:
+#  title: MyString
+#  memo: MyText
