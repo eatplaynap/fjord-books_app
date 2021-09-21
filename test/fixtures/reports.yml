@@ -4,8 +4,3 @@ one:
   user_id: 1
   title: MyString
   content: MyText
-
-#two:
-#  user: two
-#  title: MyString
-#  content: MyText
